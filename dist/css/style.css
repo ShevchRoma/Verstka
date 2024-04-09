@@ -470,6 +470,17 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
+  position: relative;
+}
+
+.app__page .page-app__content::before {
+  position: absolute;
+  content: "";
+  width: 109.3%;
+  height: 1px;
+  background: #eeeeee;
+  top: 5.5%;
+  left: -4.3%;
 }
 
 .app__page .page-app__column {
