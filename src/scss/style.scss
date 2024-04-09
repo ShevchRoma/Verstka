@@ -400,6 +400,14 @@
         margin: 0 0 40px 0;
         height: 29px;
         position: relative;
+        &:nth-child(49),
+        &:nth-child(50),
+        &:nth-child(51),
+        &:nth-child(52),
+        &:nth-child(53),
+        &:nth-child(54){
+          margin: 0 0 20px 0;
+        }
         &::after {
           position: absolute;
           content: "";
@@ -548,6 +556,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-top: 30px;
         @media (max-width: 670px) {
           flex-direction: column;
         }

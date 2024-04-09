@@ -504,6 +504,15 @@ body {
   position: relative;
 }
 
+.app__page .page-app__column:nth-child(49),
+.app__page .page-app__column:nth-child(50),
+.app__page .page-app__column:nth-child(51),
+.app__page .page-app__column:nth-child(52),
+.app__page .page-app__column:nth-child(53),
+.app__page .page-app__column:nth-child(54) {
+  margin: 0 0 20px 0;
+}
+
 .app__page .page-app__column::after {
   position: absolute;
   content: "";
@@ -657,6 +666,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 30px;
 }
 
 .app__page .page-app__pagination .app-pagination__row {
