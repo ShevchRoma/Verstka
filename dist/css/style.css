@@ -460,30 +460,22 @@ body {
 }
 
 .app__page .page-app__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin-bottom: 32px;
-  position: relative;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
-.app__page .page-app__content::before {
-  position: absolute;
-  content: "";
-  width: 109.3%;
-  height: 1px;
-  background: #eeeeee;
-  top: 5%;
-  left: -4.3%;
-}
-
-.app__page .page-app__content .page-column:last-child {
+.app__page .page-app__column {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -491,69 +483,73 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.app__page .page-app__content .page-column:last-child > *::after {
-  display: none;
-}
-
-.app__page .page-app__content .page-column__row {
   margin: 0 0 40px 0;
-  font-size: 14px;
-  font-weight: 500;
   height: 29px;
-  letter-spacing: -0.01em;
-  color: #292d32;
-}
-
-.app__page .page-app__content .page-column__row:not(.page-column__row:first-child) {
   position: relative;
 }
 
-.app__page .page-app__content .page-column__row:not(.page-column__row:first-child)::after {
+.app__page .page-app__column::after {
   position: absolute;
   content: "";
-  width: 243%;
+  top: 165%;
+  left: 0;
+  width: 240%;
   height: 1px;
   background: #eeeeee;
-  left: 0;
-  top: 139%;
 }
 
-.app__page .page-app__content .page-column__row:first-child {
+.app__page .page-app__column:first-child::after,
+.app__page .page-app__column:nth-child(2)::after,
+.app__page .page-app__column:nth-child(3) .app__page .page-app__column:nth-child(4)::after {
+  display: none;
+}
+
+.app__page .page-app__column.column-app__title {
   margin: 0 0 34px 0;
   font-size: 14px;
   font-weight: 500;
+  letter-spacing: -0.01em;
+  text-align: left;
   height: 21px;
   color: #b5b7c0;
-  letter-spacing: -0.01em;
 }
 
-.app__page .page-app__content .page-column__row:last-child {
-  padding: 0 0 20px 0;
+.app__page .page-app__column.column-app__title::after {
+  display: none;
 }
 
-.app__page .page-app__content .page-column__row.page-column__row_status_act,
-.app__page .page-app__content .page-column__row.page-column__row_status_inact {
+.app__page .page-app__column.page-app__column_act {
   width: 80px;
-  line-height: 27px;
+  height: 29px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 4px;
+  justify-self: center;
+  color: #00b087;
+  border: 1px solid #00b087;
+  background: rgba(22, 192, 152, 0.38);
+}
+
+.app__page .page-app__column.page-app__column_act::after {
+  display: none;
+}
+
+.app__page .page-app__column.page-app__column_inact {
+  border: 1px solid #df0404;
+  background: #ffc5c5;
+  color: #df0404;
   text-align: center;
   border-radius: 4px;
+  line-height: 20px;
 }
 
-.app__page .page-app__content .page-column__row.page-column__row_status_act {
-  background: rgba(22, 192, 152, 0.38);
-  border: 1px solid #00b087;
-  color: #008767;
-}
-
-.app__page .page-app__content .page-column__row.page-column__row_status_inact {
-  background: #ffc5c5;
-  border: 1px solid #df0404;
-  color: #df0404;
+.app__page .page-app__column.page-app__column_inact::after {
+  display: none;
 }
 
 .app__page .page-app__mobile {
@@ -759,9 +755,9 @@ body {
   }
 }
 
-@media (max-width: 954px) {
-  .app__page .page-app__content .page-column__row:not(.page-column__row:first-child)::after {
-    width: 225%;
+@media (max-width: 946px) {
+  .app__page .page-app__column::after {
+    width: 220%;
   }
 }
 
